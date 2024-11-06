@@ -13,6 +13,7 @@
     <lombok.version>1.18.34</lombok.version>
     <ecj.version>3.38.0</ecj.version>
     <takari-lifecycle-plugin.version>2.2.0</takari-lifecycle-plugin.version>
+    <compilerId>jdt</compilerId>
   </properties>
 
   <dependencies>
@@ -113,7 +114,7 @@
               </execution>
             </executions>
             <configuration>
-              <compilerId>jdt</compilerId>
+              <compilerId>${compilerId}</compilerId>
               <proc>proc</proc>
               <parameters>true</parameters>
               <source>${maven.compiler.release}</source>

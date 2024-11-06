@@ -1,7 +1,7 @@
-This is a toy project to reproduce the Lombok code leak when using Takari Lifecycle + ECJ + @SneakyThrows.
-It has just one super silly Java class with a main method calling a private method `dangerousMethod` annotated with @SneakyThrows.
+This is a toy project to reproduce the Lombok code leak when using Takari Lifecycle + ECJ + `@SneakyThrows`.
+It has just one super silly Java class with a `main()` method calling a private method `dangerousMethod()` annotated with `@SneakyThrows`.
 
-However, when compiling with the Takari Lifecycle plugin, the generated code leaks Lombok code, thus forcing the `lombok` artifact to be available at runtime:
+When compiling with the Takari Lifecycle plugin, the generated code leaks Lombok code, thus forcing the `lombok` artifact to be available at runtime:
 ```
     private void dangerousMethod() {
         try {
